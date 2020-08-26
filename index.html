@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="loadHTML.js"></script>
+    <script src="alarm.js"></script>
+    <link href="index_style.css" rel=stylesheet>
+    <title>the barz</title>
+  </head>
+  <body style="margin:0">
+    <div class="grid">
+
+      <div id="left"> <!-- Nevigation bar -->
+        <div class="vertical_top">
+          <!-- Friend -->
+          <span>
+            <a href="#" title="Friend">
+              <img src="icon/friend.png" width="30" height="30" onclick="
+                load.Friend();
+              ">
+            </a>
+            <!-- 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a> -->
+          </span>
+          <!-- Chatting -->
+          <span>
+            <a href="#" title="Chatting">
+              <img src="icon/chat.png" width="30" height="30" onclick="
+                load.chatting();
+              ">
+            </a>
+            <!-- Icons made by <a href="https://www.flaticon.com/authors/smartline" title="Smartline">Smartline</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+          </span>
+          <!-- More -->
+          <span>
+            <a href="#" title="More">
+              <img src="icon/more.png" width="30" height="30" onclick="
+                load.more();
+              ">
+            </a>
+            <!-- Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+          </span>
+        </div>
+        <div class="vertical_bottom">
+          <!-- emoji -->
+          <span>
+            <a href="#" title="emoji">
+              <img src="icon/emoji.png" width="20" height="20">
+            </a>
+            <!-- Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+          </span>
+          <!-- alarm toggle button -->
+          <span>
+            <a id="a_info" href="#" title="alarm off">
+              <img src="icon/alarm_on.png" width="20" height="20" onclick="
+                alarm_toggle(this);
+              ">
+            </a>
+          </span>
+          <!-- setting -->
+          <span>
+            <a href="#" title="setting">
+              <img src="icon/setting.png" width="20" height="20">
+            </a>
+            <!-- Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+          </span>
+
+        </div>
+      </div>
+      <div id="right">
+        <script>
+          load.Friend();
+        </script>
+
+      </div>
+    </div>
+  </body>
+</html>

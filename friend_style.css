@@ -1,0 +1,50 @@
+.top_bar {
+  border: none;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 50% 50%;
+  margin-top: 37px;
+}
+
+.add_f {
+  margin-top: 6px;
+}
+
+.my_info, .friends{
+  height: 50px;
+  width: 100%;
+  border: none;
+  display: grid;
+  grid-template-columns: 2fr 1fr 7fr;
+}
+
+.my_info_name {
+  border: none;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.my_info_music{
+  text-align: right;
+}
+
+.my_info_music input{
+  border: 1px solid green;
+  border-radius: 25px;
+  margin-top: 14px;
+  color: #747474;
+}
+
+#search_input{
+  border: 1px #E4E4E4 solid;
+  background-color: #E4E4E4;
+  border-radius: 25px;
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.list_f_bar{
+  color: #747474;
+  font-size: 13px;
+}
