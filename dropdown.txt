@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html class="stop" >
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="fontello-8e66246d/css/fontello.css">
     <style>
       .dropbtn{
         border-radius: 10px;
@@ -22,7 +23,7 @@
         background-color: #dedede;
         border-radius: 10px;
         display: none;
-        width: auto;
+        width: 300px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
       }
@@ -43,21 +44,83 @@
         display: block;
       }
 
+      .dropdown_check{
+        display: grid;
+        grid-template-columns: 1fr 9fr;
+      }
+
+      .icon-ok-circled{
+        display: none;
+      }
+
     </style>
 
     <script>
       // https://www.w3schools.com/howto/howto_js_dropdown.asp
-      // class="dropdown-content" 에게 class="btn_toggle" 을 true/false 해주는 기능
+      // class="dropdown-content" 에게 class="btn_toggle" 을 추가/삭제 해주는 기능
       function btnDropdown(){
         document.querySelector('.dropdown-content').classList.toggle('btn_toggle');
       }
 
+      function radioBtnToggle(t){
+        while(true){
+          if(t.tagName === 'A'){
+            var c = t.children;
+            var arr = []; // 자식요소 배열
+            var stopLoop = false;
+
+            while(true){
+              if(stopLoop) break;
+              for(var i=0; i<c.length; i++){
+                if(c[i].tagName === 'I'){
+                  var radioImg = document.querySelectorAll('.dropdown-content .icon-ok-circled');
+                  for(var x=0; x<radioImg.length; x++){
+                      radioImg[x].style.display = 'none';
+                  }
+
+                  c[i].style.display = 'block';
+                  stopLoop = true;
+                  break;
+                }
+                else{
+                  var e = c[i].children;
+                  for(var n=0; n<e.length; n++){
+                    arr.push(e[n]);
+                  }
+                }
+              }
+              c = arr; //자식 요소 배열을 c에 담아서 다시 for문으로 돌려줌
+              arr = []; //자식 요소 배열 초기화
+            }
+            break;
+          }
+          else{
+            t = t.parentNode;
+          }
+        }
+      }
+
       window.addEventListener("click", function(event){
-        if(!event.target.matches('.dropbtn')){
-          var dropdowns = document.querySelector('.dropdown-content');
-          var cList = dropdowns.classList;
-          if(cList[1] == 'btn_toggle'){
-            btnDropdown();
+        var originTarget = event.target;
+        var t = event.target;
+        while(true){
+          if( t.tagName === 'HTML'){
+            if( event.target.className === 'dropbtn' ){
+              break;
+            }
+            var dropdowns = document.querySelector('.dropdown-content');
+            var cList = dropdowns.classList;
+            if(cList[1] == 'btn_toggle'){
+              btnDropdown();
+            }
+            break;
+          }
+          if( t.classList.contains('dropdown-content') ){
+            radioBtnToggle(originTarget);
+            break;
+          }
+          else{
+            t = t.parentNode;
           }
         }
       });
@@ -71,13 +134,41 @@
         btnDropdown();
       ">
       <div class="dropdown-content">
-        <a target="_blank" href="https://www.w3schools.com/howto/howto_js_dropdown.asp">Clickable Dropdown Example</a>
-        <a href="#">LINK 2</a>
+        <a target="_blank" href="https://www.w3schools.com/howto/howto_js_dropdown.asp">
+          <div class="dropdown_check">
+            <div class="checkbox_text">
+              <i class="icon-ok-circled"> </i>
+            </div>
+            <div class="checkbox_text">
+              Clickable Dropdown Example
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="dropdown_check">
+            <div class="checkbox_text">
+              <i class="icon-ok-circled"> </i>
+            </div>
+            <div class="checkbox_text">
+              LINK 2
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="dropdown_check">
+            <div class="checkbox_text">
+              <i class="icon-ok-circled"> </i>
+            </div>
+            <div class="checkbox_text">
+              LINK 3
+            </div>
+          </div>
+        </a>
       </div>
     </div>
 
-    <div class="">
-      1
+    <div class="1">
+      DropDown Example
     </div>
 
   </body>
