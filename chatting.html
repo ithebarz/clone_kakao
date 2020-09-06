@@ -2,11 +2,51 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="chatting_style.css">
+    <link rel="stylesheet" href="fontello-8e66246d/css/fontello.css">
+    <script src="dropdown.js"></script>
+
   </head>
+
   <body style="margin-top: 37px;">
-    <a href="#" title="채팅 정리" style="text-decoration: none; color:black;">
-      <span>채팅 </span><span style="font-size: 11px;">▼</span>
+    <a href="#" class="dropbtn" style="text-decoration: none; color:black;" onclick="
+      btnDropdown();
+    ">
+      <span class="dropbtn">채팅 </span><span class="dropbtn" style="font-size: 11px;">▼</span>
     </a>
+    <div class="dropdown-content">
+      <a href="#">
+        <div class="dropdown_check">
+          <div class="checkbox_text">
+            <i class="icon-ok-circled"> </i>
+          </div>
+          <div class="checkbox_text">
+            최신 메시지 순
+          </div>
+        </div>
+      </a>
+      <a href="#">
+        <div class="dropdown_check">
+          <div class="checkbox_text">
+            <i class="icon-ok-circled"> </i>
+          </div>
+          <div class="checkbox_text">
+            안 읽은 메시지 순
+          </div>
+        </div>
+      </a>
+      <a href="#">
+        <div class="dropdown_check">
+          <div class="checkbox_text">
+            <i class="icon-ok-circled"> </i>
+          </div>
+          <div class="checkbox_text">
+            즐겨찾기 순
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
   </body>
-  
+
 </html>

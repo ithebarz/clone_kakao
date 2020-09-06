@@ -1,0 +1,41 @@
+.dropbtn{
+  cursor: pointer;
+}
+
+.dropdown-content{
+  position: absolute;
+  background-color: white;
+  border: 1px black solid;
+  display: none;
+  width: 130px;
+  z-index: 1;
+}
+
+.dropdown-content a{
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 10px 10px;
+}
+
+.dropdown-content a:hover {
+  background-color: #929fae;
+  border-radius: 10px;
+}
+
+.btn_toggle{
+  display: block;
+}
+
+.dropdown_check{
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+}
+
+.icon-ok-circled{
+  display: none;
+}
+
+.checkbox_text{
+  font-size: 12px;
+}
